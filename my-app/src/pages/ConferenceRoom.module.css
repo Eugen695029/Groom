@@ -1,0 +1,30 @@
+.containerMain{
+    display: flex;
+}
+
+.videContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+
+}
+.containerItem1{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #171717;
+}
+
+.containerItem2{
+    display: flex;
+    justify-content: center;
+    background-color: #252525;
+
+    padding-bottom:20px;
+    padding-top:20px;
+}
+
+.containerItem2 div{
+    margin-right: 20px;
+}

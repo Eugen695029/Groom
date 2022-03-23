@@ -1,0 +1,20 @@
+.chatContainer{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    background-color:#252525;
+}
+
+.screenText{
+    height: 100%;
+    padding: 24px;
+
+}
+.inputContainer{
+    display: flex;
+    padding: 24px;
+}
+
+.inputContainer div{
+    margin-left: 30px;
+}
