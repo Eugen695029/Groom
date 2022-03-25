@@ -3,7 +3,7 @@ import RegCard from '../component/RegCard.js'
 import MyButton from '../button/MyButton.jsx'
 import SpecialButton from '../button/SpecialButton.jsx'
 import classes from './Home.module.css'
-import im from '../pages/jojo.png'
+import im from '../img/jojo.png'
 import './Video.css'
 //import VideoPlayer from 'react-video-js-player'
 

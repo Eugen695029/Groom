@@ -5,56 +5,64 @@ import MyInput from '../input/MyInput.jsx'
 import Chat from '../component/Chat.js'
 import { useParams } from 'react-router-dom'
 import useWebRTC from '../hooks/useWebRTC.js'
+import {useState} from 'react'
+import videPNG from '../img/video.png'
+import microphonePNG from '../img/microphone.png'
+import phonePNG from '../img/phone.png'
+import messengerPNG from '../img/messenger.png'
+import LOCAL_VIDEO from '../hooks/useWebRTC.js'
 
-const {id: roomId} = useParams();
+function ConferenceRoom() {
+    const {id: roomID} = useParams();
+    const {clients, provideMediaRef} = useWebRTC(roomID);
 
-class ConferenceRoom extends Component {
+    const [visibility, v] = useState(false);
 
-    useWebRTC(roomID);
-
-    console.log(roomID);
-    state = {
-        visibility: false
-    };
-
-    viewChat = (value) => {
-        if(this.state.visibility==false){
-            this.setState({ visibility: value })
+    const viewChat = (value) => {
+        if(visibility==false){
+            v(value);
         }
         else{
-            this.setState({ visibility: !value })
-            console.log(value);
+            v(!value);
         }
-    }
-
-    render() {
+    };
         return (
             <div className={classes.containerMain}>
                 <div className={classes.videContainer}>
                     <div className={classes.containerItem1}>
-
+                        {clients.map((clientID) => {
+                            return(
+                                <div>
+                                    <video
+                                        ref={ instance => {
+                                         provideMediaRef(clientID, instance)
+                                        }}
+                                        autoPlay
+                                        playsInline
+                                        muted={clientID === LOCAL_VIDEO}
+                                    />
+                                </div>
+                            )
+                        })}
                     </div>
                     <div className={classes.containerItem2}>
                         <div>
-                            <SpecialButton img="video.png" w="42px" h="42px" typ="camer"/>
+                            <SpecialButton img={videPNG} w="42px" h="42px" typ="camer"/>
                         </div>
                         <div>
-                            <SpecialButton img="microphone.png" w="42px" h="42px" typ="mikro"/>
+                            <SpecialButton img={microphonePNG} w="42px" h="42px" typ="mikro"/>
                         </div>
                         <div>
-                            <SpecialButton img="phone.png" w="42px" h="42px" typ="leav"/>
+                            <SpecialButton img={phonePNG} w="42px" h="42px" typ="leav"/>
                         </div>
                         <div>
-                            <SpecialButton viewChat={this.viewChat} img="messenger.png" w="42px" h="42px" typ="chat"/>
+                            <SpecialButton viewChat={viewChat} img={messengerPNG} w="42px" h="42px" typ="chat"/>
                         </div>
                     </div>
                 </div>
-                <Chat visibility={this.state.visibility}/>
+                <Chat visibility={visibility}/>
             </div>
         );
-
-    }
-    
 }
 
 export default ConferenceRoom;

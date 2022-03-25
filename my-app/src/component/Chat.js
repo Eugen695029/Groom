@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from './Chat.module.css'
 import SpecialButton from '../button/SpecialButton.jsx'
 import MyInput from '../input/MyInput.jsx'
+import enterPNG from '../img/enter2.png'
 
 class Chat extends Component {
 
@@ -14,7 +15,7 @@ class Chat extends Component {
                     <div className={classes.inputContainer}>
                         <MyInput/>
                         <div>
-                            <SpecialButton img='enter2.png' typ="enter" w="42px" h="42px"/>
+                            <SpecialButton img={enterPNG} typ="enter" w="42px" h="42px"/>
                         </div>
                     </div>
                 </div>
