@@ -14,7 +14,7 @@ import Conference from '../pages/Conference.js'
 import CreateConference from '../pages/CreateConference.js'
 import System from '../pages/System.js'
 import ConferenceRoom from '../pages/ConferenceRoom.js'
-import socket from '../socket'
+
 
 
 function Header(){

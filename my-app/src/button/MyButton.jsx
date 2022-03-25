@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 class MyButton extends Component {
     render() {
         return (
-            <button onClick={() =>{window.location.assign(this.props.goTo)}} className={classes.myButton} style={{background: this.props.color}}>
+            <button onClick={() =>{window.location.assign(this.props.goTo)}} className={classes.myButton} style={{background: this.props.color, width: this.props.w}}>
                 {this.props.text}
             </button>
         );

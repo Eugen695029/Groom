@@ -3,8 +3,16 @@ import classes from './ConferenceRoom.module.css'
 import SpecialButton from '../button/SpecialButton.jsx'
 import MyInput from '../input/MyInput.jsx'
 import Chat from '../component/Chat.js'
+import { useParams } from 'react-router-dom'
+import useWebRTC from '../hooks/useWebRTC.js'
+
+const {id: roomId} = useParams();
+
 class ConferenceRoom extends Component {
 
+    useWebRTC(roomID);
+
+    console.log(roomID);
     state = {
         visibility: false
     };
