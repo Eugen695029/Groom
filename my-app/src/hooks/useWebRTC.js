@@ -1,6 +1,6 @@
 import {useEffect, useRef, useCallback} from 'react';
 import freeice from 'freeice';
-import useStateWithCallback from './useStateWithCallbeck.js';
+import useStateWithCallback from './useStateWithCallback';
 import socket from '../socket';
 import ACTIONS from '../socket/actions';
 
@@ -155,7 +155,10 @@ export default function useWebRTC(roomID) {
     async function startCapture() {
       localMediaStream.current = await navigator.mediaDevices.getUserMedia({
         audio: true,
-        video: true,
+        video: {
+          width: 1280,
+          height: 720,
+        }
       });
 
       addNewClient(LOCAL_VIDEO, () => {

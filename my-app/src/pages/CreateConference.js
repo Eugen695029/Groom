@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import classes from './CreateConference.module.css'
 import MyInput from '../input/MyInput.jsx'
 import MyButton from '../button/MyButton.jsx'
-import socket from '../socket'
+import socket from '../socket/index.js'
 import ACTIONS from '../socket/actions.js'
 import {useState, useEffect} from 'react'
 

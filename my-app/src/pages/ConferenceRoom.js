@@ -3,7 +3,7 @@ import classes from './ConferenceRoom.module.css'
 import SpecialButton from '../button/SpecialButton.jsx'
 import MyInput from '../input/MyInput.jsx'
 import Chat from '../component/Chat.js'
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router'
 import useWebRTC from '../hooks/useWebRTC.js'
 import {useState} from 'react'
 import videPNG from '../img/video.png'
@@ -39,7 +39,7 @@ function layout(clientsNumber = 1) {
         height,
       }));
     }).flat();
-  }
+}
 
 function ConferenceRoom() {
     const {id: roomID} = useParams();
