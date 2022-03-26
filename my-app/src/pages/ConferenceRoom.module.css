@@ -11,6 +11,10 @@
 }
 .containerItem1{
     display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
     flex-direction: column;
     height: 100%;
     background-color: #171717;
