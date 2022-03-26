@@ -79,7 +79,7 @@ function ConferenceRoom() {
                     </div>
                     <div className={classes.containerItem2}>
                         <div>
-                            <SpecialButton img={videPNG} w="42px" h="42px" typ="camer"/>
+                            <SpecialButton img={videPNG} w="42px" h="42px" typ="camera"/>
                         </div>
                         <div>
                             <SpecialButton img={microphonePNG} w="42px" h="42px" typ="mikro"/>

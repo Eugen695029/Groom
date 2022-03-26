@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
-import classes from './SpecialButton.module.css'
+import classes from './SpecialButton.module.css';
+
+
+
 
 function Click(typ,viewChat,visibility){
     switch(typ){
         case 'chat':
             viewChat(visibility);
         break;
+        case 'leav':
+            window.location.assign('http://localhost:3000/conference');
+        break;
     }
 }
 
 class SpecialButton extends Component {
-    
     state = {
         visibility: true
     };
